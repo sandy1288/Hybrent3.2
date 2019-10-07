@@ -1,7 +1,7 @@
-exports.url = 'https://qa3.test.hybrent.com/b/#';
+exports.url = 'https://qa9.test.hybrent.com/b/#';
 
 exports.user = {
-  username: "admin",
+  username: "sandy",
   password: "goouser",
   fac_name: " "
 };
@@ -12,7 +12,7 @@ exports.shop = {
   reorderWarningSKU: "21-2967-24",
   backOrderWarningSKU: "257074",
   discontinueWarningSKU: "21172",
-  vendor: "MCKESSON",
+  vendor: "PATTERSON DENTAL",
   contractPriceWarningSKU: "OFC333",
   GPOWarningSKU: "501635",
   fac_xpath: "//a[@ng-click='selectItem();']"
@@ -43,7 +43,7 @@ exports.itemCatalog = {
   General_mfrNumber: "General_mfr",
   Service_mfrNumber: "service mfr",
   Billonly_mfr: "Billonly mfr",
-  vendor: "MCKESSON",
+  vendor: "PATTERSON DENTAL",
   Generalcategory: "TESTING AUTOMATION",
   facility: "Life Care Surgery Clinic",
   itemForVendorUpdate: "ADAPTER,SOLID PADS",
