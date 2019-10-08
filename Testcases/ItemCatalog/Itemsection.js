@@ -29,7 +29,8 @@ describe('Hybrent Item Catalog Module', function () {
   var Dme_item_name = browser.params.itemCatalog.Dme_item_name;
   var Dme_Alias = browser.params.itemCatalog.Dme_Alias;
   var Dme_mfr = browser.params.itemCatalog.Dme_mfr;
-
+  var ARC = browser.params.AR_Code.Code;
+  var randomnumber = browser.params.Vendor_price_tier.randompricetier;
 
 
   it('Item Catalog page should open', function () {
@@ -254,7 +255,18 @@ describe('Hybrent Item Catalog Module', function () {
     });
   });
 
-
+  it('Add Amenity item', function () {
+    element(by.xpath('//span[@class="fa fa-caret-down"]')).click();
+    element(by.xpath('//a[contains(text(),"Add Amenity")]')).click();
+    browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
+    element(by.model('amenity.description')).sendKeys('testAM' + randNumber);
+    element(by.model('amenity.alias')).sendKeys('amenityalias' + randNumber);
+    element(by.model('amenity.service_duration')).$('[label="' + 'For One Time' + '"]').click();
+    element(by.model('amenity.ar_code_id')).sendKeys(ARC + randomnumber);
+    browser.sleep(1000);
+    element(by.buttonText('Save')).click();
+    expect($('.toast-message').getText()).toEqual('Amenity saved successfully.');
+  });
 
 
 

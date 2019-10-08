@@ -125,3 +125,12 @@ exports.Vendor_price_tier = {
   newPrice_percentage: '3',
   randompricetier: Math.floor((Math.random() * 100) + 1)
 }
+
+exports.AR_Code = {
+  Description: 'TestAR',
+  Code: 'ARC'
+}
+
+exports.Payer_Code = {
+  Description: 'TestPR'
+}
