@@ -29,8 +29,6 @@ describe('Inventory Transfer Module', function () {
     expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.doc_number')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.status')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Reset')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Start New Transfer')).isPresent()).toBeTruthy();
+
   });
 });
