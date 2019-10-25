@@ -6,24 +6,24 @@ describe('Hybrent Login Module', function () {
     browser.get(browser.params.url + '/login');
   });
 
-  /* it('Login: Try login without any credentials.', function () {
-     // Waits for loading popup to be no longer visible on the dom.
-     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-     //loginLink.click();
-     element(by.buttonText('Login')).click();
-     expect(errorElem.getText()).toEqual('Invalid user name or password.');
-   });
+  it('Login: Try login without any credentials.', function () {
+    // Waits for loading popup to be no longer visible on the dom.
+    browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 10000);
+    //loginLink.click();
+    element(by.buttonText('Login')).click();
+    expect(errorElem.getText()).toEqual('Invalid user name or password.');
+  });
 
-   it('Login: Try login with wrong credentials.', function () {
-     // Waits for loading popup to be no longer visible on the dom.
-     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-     //loginLink.click();
-     element(by.model('model.userName')).sendKeys('test');
-     element(by.model('model.password')).sendKeys('test');
-     element(by.buttonText('Login')).click();
-     expect(errorElem.getText()).toEqual('Invalid user name or password.');
-   });
-   */
+  it('Login: Try login with wrong credentials.', function () {
+    // Waits for loading popup to be no longer visible on the dom.
+    browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
+    //loginLink.click();
+    element(by.model('model.userName')).sendKeys('test');
+    element(by.model('model.password')).sendKeys('test');
+    element(by.buttonText('Login')).click();
+    expect(errorElem.getText()).toEqual('Invalid user name or password.');
+  });
+
 
   it('Login: Try login with correct credentials.', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);

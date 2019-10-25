@@ -5,18 +5,18 @@ describe('Hybrent Order Module', function () {
   it('Open order module', function () {
     element(by.linkText('Orders')).click();
     expect(browser.getTitle()).toEqual('My Orders');
-    browser.sleep(1000);
+
   });
   it('List page should display list of filters', function () {
+    browser.sleep(2000);
     expect(element(by.model('searchForm.search')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchForm.vendorFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.statusFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.typeFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.project')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.facilityId')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.departmentId')).isPresent()).toBeTruthy();
     expect(element(by.model('$ctrl.selectedValue.name')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+
   });
 
   it('Order list page search with PO# Found', function () {

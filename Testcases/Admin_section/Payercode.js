@@ -26,14 +26,14 @@ describe('Payor Code', function () {
     element(by.model('payorCodeData.description')).sendKeys(Payer_Code);
     element(by.model('payorCodeData.code')).sendKeys(randomnumber);
     element(by.xpath('//a[contains(text(),"AR Code")]')).click();
-    browser.sleep(2000);
-    element(by.xpath('//i[@class="fa fa-ellipsis-v autocomplete-show"]')).click();
-    browser.sleep(1000);
-    element(by.model('data.items_selection')).sendKeys(randomnumber);
-    browser.sleep(2000);
-    element(by.xpath('//i[@class="glyphicon glyphicon-plus autocomplete-show"]')).click();
+    // browser.sleep(2000);
+    // element(by.xpath('//i[@class="fa fa-ellipsis-v autocomplete-show"]')).click();
+    // browser.sleep(1000);
+    // element(by.model('data.items_selection')).sendKeys(randomnumber);
+    // browser.sleep(2000);
+    // element(by.xpath('//i[@class="glyphicon glyphicon-plus autocomplete-show"]')).click();
     element(by.buttonText('Save')).click();
-    expect($('.toast-message').getText()).toEqual('Code created sucessfully.');
+    expect($('.toast-message').getText()).toEqual('Code created successfully.');
 
   });
 
@@ -52,7 +52,7 @@ describe('Payor Code', function () {
     element(by.buttonText('Delete')).click();
     browser.sleep(1000);
     element(by.buttonText('Yes')).click();
-    expect($('.toast-message').getText()).toEqual('This Payor code cant be deleted as it is map with account receivable code.');
+    expect($('.toast-message').getText()).toEqual('Code deleted successfully.');
 
   });
 

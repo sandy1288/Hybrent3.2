@@ -1,5 +1,5 @@
 var user_facility = require('../Userfacility/User_defaultfacility.js');
-describe('Prefcard module', function () {
+describe('Planner module', function () {
   var EC = protractor.ExpectedConditions;
   var fac_name = browser.params.user.fac_name;
   var randNumber = browser.params.itemCatalog.randNumber;

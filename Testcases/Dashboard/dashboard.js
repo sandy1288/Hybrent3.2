@@ -5,34 +5,38 @@ describe('Dashboard test cases', function () {
   var DashBoard_Report_PartialReviews_txt = element.all(by.css('[ng-click="goToOrders()"]'));
   var userfacility = browser.params.userfacility.facility_xpath;
 
-
   it('Verify that System gets redirected to Profile page when user clicks on Profile link', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.xpath('//a[@class="dropdown-toggle text-info header-menu-tab cursor-pointer"]')).click();
+    browser.sleep(2000);
+    element(by.className('dropdown-toggle text-info header-menu-tab cursor-pointer')).click();
     element(by.xpath('//a[contains(text(),"Profile")]')).click();
     element(by.xpath(userfacility)).getText().then(function (facility_name) {
       console.log('user default facility is', facility_name);
     })
+    browser.sleep(2000);
     expect(browser.getTitle()).toEqual('User Profile');
   }, 20000);
 
   it('Verify that system gets redirected to NOTIFICATION SETTINGS page when user clicks on Notification settings button', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.xpath('//a[@class="dropdown-toggle text-info header-menu-tab cursor-pointer"]')).click();
+    element(by.className('dropdown-toggle text-info header-menu-tab cursor-pointer')).click();
     element(by.linkText('Notification Settings')).click();
+    browser.sleep(2000);
     expect(browser.getTitle()).toEqual('Notifications Settings');
   });
+
   it('Verify that System gets redirected to Alerts page when user clicks on Alerts link', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.xpath('//a[@class="dropdown-toggle text-info header-menu-tab cursor-pointer"]')).click();
+    element(by.className('dropdown-toggle text-info header-menu-tab cursor-pointer')).click();
     element(by.linkText('Alerts')).click();
+    browser.sleep(2000);
     expect(browser.getTitle()).toEqual('User Alert');
 
   });
 
   it('Verify that System gets redirected to "Survey" page when user clicks on "Survey" link.', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.xpath('//a[@class="dropdown-toggle text-info header-menu-tab cursor-pointer"]')).click();
+    element(by.className('dropdown-toggle text-info header-menu-tab cursor-pointer')).click();
     element(by.xpath('//a[@ng-click="openSurvey()"]')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
 
@@ -52,11 +56,11 @@ describe('Dashboard test cases', function () {
 
   it('Verify that System gets redirected to "Change Password" page when user clicks on " Change Password" link', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.xpath('//a[@class="dropdown-toggle text-info header-menu-tab cursor-pointer"]')).click();
+    element(by.className('dropdown-toggle text-info header-menu-tab cursor-pointer')).click();
     element(by.css('[ng-click="changePassword()"]')).click();
     expect(element(by.xpath(dashbrd.dash.chngpwd_xpath)).getText()).toEqual('Change Password');
     // browser.wait(EC.elementToBeClickable(by.buttonText('Cancel')),5000);
-    browser.sleep(1000);
+    browser.sleep(2000);
     element(by.buttonText('Cancel')).click();
   });
 
@@ -92,10 +96,8 @@ describe('Dashboard test cases', function () {
     bellicon.click();
     //browser.wait(EC.elementToBeClickable(element(by.linkText('viewall'))),20000);
     element(by.linkText('View All')).click();
+    browser.sleep(2000);
     expect(browser.getTitle()).toEqual('Notifications');
-
-
-
   });
 
   it('Verify that user gets redirected to corresponding Report on clicking View More Reports button', function () {
@@ -139,7 +141,8 @@ describe('Dashboard test cases', function () {
           browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
           element(by.xpath("//div[@id='reqListing_info']")).getText().then(function (partialorders) {
             console.log('partial order on order page are', partialorders);
-            expect(count1).toBe(partialorders);
+            browser.sleep(2000);
+            expect(count1).toContain(partialorders);
           })
 
         })
@@ -163,6 +166,7 @@ describe('Dashboard test cases', function () {
         }
         var rows = element.all(by.repeater("ordersData in dashboardData.recentPOs.rows"));
         rows.first().element(by.tagName("a")).click();
+        browser.sleep(2000);
         expect(browser.getTitle()).toEqual('Purchase Order');
 
 
@@ -182,7 +186,7 @@ describe('Dashboard test cases', function () {
         rows.first().element(by.tagName("a")).click();
         expect(browser.getTitle()).toEqual('News');
         element(by.linkText('Dashboard')).click();
-        browser.sleep(1000);
+        browser.sleep(2000);
 
       } else {
         console.log('News & Event does not appear on page');
@@ -190,11 +194,6 @@ describe('Dashboard test cases', function () {
     })
 
   });
-
-
-
-
-
 
 
 });

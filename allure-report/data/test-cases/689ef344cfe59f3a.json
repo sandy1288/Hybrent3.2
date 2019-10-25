@@ -1,0 +1,134 @@
+{
+  "uid" : "689ef344cfe59f3a",
+  "name" : "user default facility is",
+  "fullName" : "user default facility.user default facility is",
+  "historyId" : "9fded3c930235c2c2c76c2df0687de40",
+  "time" : {
+    "start" : 1571457821170,
+    "stop" : 1571457822765,
+    "duration" : 1595
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1524e45ba4384788",
+      "name" : "Screenshot",
+      "source" : "1524e45ba4384788.png",
+      "type" : "image/png",
+      "size" : 263290
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "user default facility"
+  }, {
+    "name" : "testClass",
+    "value" : "user default facility"
+  }, {
+    "name" : "testMethod",
+    "value" : "user default facility is"
+  }, {
+    "name" : "package",
+    "value" : "user default facility"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "3608bf673e66b588",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571423553314,
+        "stop" : 1571423553705,
+        "duration" : 391
+      }
+    }, {
+      "uid" : "5107b656cfe498d0",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571423295627,
+        "stop" : 1571423296005,
+        "duration" : 378
+      }
+    }, {
+      "uid" : "4b70e4e87eb3b226",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571423106916,
+        "stop" : 1571423107355,
+        "duration" : 439
+      }
+    }, {
+      "uid" : "c6a274ae8d896b6b",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571422929306,
+        "stop" : 1571422929721,
+        "duration" : 415
+      }
+    }, {
+      "uid" : "49b8ec754949b3e0",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571422378909,
+        "stop" : 1571422379324,
+        "duration" : 415
+      }
+    }, {
+      "uid" : "c6f55e86b93ce739",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571422111345,
+        "stop" : 1571422111753,
+        "duration" : 408
+      }
+    }, {
+      "uid" : "444fce62e374d4ec",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571420097029,
+        "stop" : 1571420097458,
+        "duration" : 429
+      }
+    }, {
+      "uid" : "8abc4de29fe43bae",
+      "status" : "failed",
+      "statusDetails" : "Failed: No element found using locator: By(xpath, //*[@id=\"wrapper\"]/div/div/div[2]/ul[1]/li/a)",
+      "time" : {
+        "start" : 1571419965166,
+        "stop" : 1571419965681,
+        "duration" : 515
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "689ef344cfe59f3a.json",
+  "parameterValues" : [ ]
+}

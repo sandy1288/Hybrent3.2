@@ -14,7 +14,12 @@ describe('Hybrent Cart Module', function () {
     element(by.model('searchParams.search')).sendKeys(General_mfrNumber + randNumber);
     expect(element(by.buttonText('+')).isPresent()).toBe(true);
     element(by.buttonText('+')).click();
-    expect(element(by.css('.item-qty-editable-label')).getText()).toEqual('2');
+    browser.sleep(2000);
+    element(by.buttonText('+')).click();
+    browser.sleep(2000);
+    element(by.buttonText('+')).click();
+    browser.sleep(2000);
+    expect(element(by.css('.item-qty-editable-label')).getText()).toEqual('4');
   });
 
   it('Generate PO', function () {

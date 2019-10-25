@@ -69,7 +69,8 @@ exports.OperatingRoom = {
 }
 exports.Patients = {
   Patientfac_xpath: "//a[@ng-click='selectItem();']",
-  Patient_fname: "john"
+  Patient_fname: "john",
+  Status: 'Active'
 }
 
 exports.Procedure = {
@@ -123,7 +124,7 @@ exports.Vendor_price_tier = {
   Price_Percentage: '25',
   newpricetier_name: 'PT2',
   newPrice_percentage: '3',
-  randompricetier: Math.floor((Math.random() * 100) + 1)
+  randompricetier: Math.floor((Math.random() * 10000) + 1)
 }
 
 exports.AR_Code = {

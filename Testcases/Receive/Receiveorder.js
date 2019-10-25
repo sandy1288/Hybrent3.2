@@ -19,7 +19,7 @@ describe('Hybrent Receive order', function () {
     expect(element(by.linkText('Notes')).isPresent()).toBeTruthy();
     expect(element(by.linkText('Documents')).isPresent()).toBeTruthy();
     expect(element(by.linkText('Add Items to Cart')).isPresent()).toBeTruthy();
-    element(by.buttonText('Search')).click();
+
     browser.sleep(1000);
   });
 
@@ -51,6 +51,7 @@ describe('Hybrent Receive order', function () {
           element(by.buttonText('Yes')).click();
           browser.wait(EC.elementToBeClickable(element(by.buttonText('No'))), 5000);
           element(by.buttonText('No')).click();
+          browser.sleep(2000);
           expect($('.toast-message').getText()).toEqual('Order completed successfully.');
           browser.sleep(2000);
         }

@@ -12,6 +12,7 @@ describe('user default facility', function () {
       console.log('user default facility is', facility_name);
       browser.params.user.fac_name = facility_name;
       console.log(browser.params.user.fac_name);
+      expect(browser.getTitle()).toEqual('User Profile');
     })
   })
 })

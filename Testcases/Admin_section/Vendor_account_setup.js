@@ -13,7 +13,9 @@ describe('Vendors Account Setup module', function () {
   });
 
   it('select vendor by select vendor list and verify the account number of user default facility', function () {
+    browser.sleep(2000);
     element(by.xpath('//a[contains(text(),"All Vendors")]')).click();
+    browser.sleep(1000);
     element(by.model('search.searchKeyword')).clear().sendKeys(vendor_name);
     element(by.buttonText('Search')).click();
     browser.sleep(2000);

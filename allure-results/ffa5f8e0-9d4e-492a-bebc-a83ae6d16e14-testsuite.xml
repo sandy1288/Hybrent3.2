@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1571457789398' stop='1571457821153'>
+    <name>Hybrent Login Module</name>
+    <title>Hybrent Login Module</title>
+    <test-cases>
+        <test-case start='1571457789399' status='passed' stop='1571457821152'>
+            <name>Login: Try login with correct credentials.</name>
+            <title>Login: Try login with correct credentials.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='6f83badf-2d14-4542-9195-b8cbd38d4c95-attachment.png' type='image/png' size='128956'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

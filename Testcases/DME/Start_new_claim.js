@@ -1,5 +1,5 @@
 var user_facility = require('../Userfacility/User_defaultfacility.js');
-describe('Hybrent Manage Inventory Module', function () {
+describe('Hybrent DME Module', function () {
   var EC = protractor.ExpectedConditions;
   var fac_name = browser.params.user.fac_name;
   var Dme_sku = browser.params.itemCatalog.Dme_sku;
@@ -28,7 +28,7 @@ describe('Hybrent Manage Inventory Module', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
     element(by.buttonText('Add DME')).click();
     browser.sleep(2000);
-    element(by.model('itemSearchParam.search')).sendKeys(Dme_sku);
+    element(by.model('itemSearchParam.search')).sendKeys(Dme_sku + randNumber);
     browser.sleep(1000);
     element(by.model('itemSearchParam.rootInventoryId')).click();
     element(by.xpath('//*[@id="inventory"]/option[1]')).click();
@@ -47,4 +47,6 @@ describe('Hybrent Manage Inventory Module', function () {
       console.log('Claim Code : ' + claim);
     })
   });
+  browser.sleep(2000);
+  element(by.buttonText('OK')).click();
 });

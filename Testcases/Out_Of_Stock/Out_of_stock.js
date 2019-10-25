@@ -11,7 +11,7 @@ describe('Hybrent Out Of stcok Module', function () {
   it('Out Of stock page should open', function () {
     browser.actions().mouseMove(element(by.xpath('//span[contains(text(),"Out Of Stock")]'))).perform();
     browser.sleep(2000);
-    element(by.linkText('Out Of Stock')).click();
+    element(by.xpath('//span[contains(text(),"Out Of Stock")]')).click();
     expect(browser.getTitle()).toEqual('Out Of Stock Items');
   });
 

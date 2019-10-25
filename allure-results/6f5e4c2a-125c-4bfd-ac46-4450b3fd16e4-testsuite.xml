@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1571457821170' stop='1571457822765'>
+    <name>user default facility</name>
+    <title>user default facility</title>
+    <test-cases>
+        <test-case start='1571457821170' status='passed' stop='1571457822765'>
+            <name>user default facility is</name>
+            <title>user default facility is</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='b6535ed2-c812-4503-9dc6-13defd2ca211-attachment.png' type='image/png' size='263290'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

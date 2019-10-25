@@ -13,9 +13,9 @@ describe('operating room module', function () {
     // element(by.xpath('//span[contains(text(),"Operating Rooms")]')).click();
     expect(browser.getTitle()).toEqual('Operating Rooms');
   });
+
   it('List page should display list of items and IC filters', function () {
     expect(element(by.model('searchParams.name')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchParams.facility_id')).isPresent()).toBeTruthy();
 
   });
 

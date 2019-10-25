@@ -1,0 +1,64 @@
+{
+  "uid" : "142f6f092fd7ee61",
+  "name" : "Login: Try login with correct credentials.",
+  "fullName" : "Hybrent Login Module.Login: Try login with correct credentials.",
+  "historyId" : "c58bf4cbd04ef6aacdf482c6dd3626d8",
+  "time" : {
+    "start" : 1571422911529,
+    "stop" : 1571422929286,
+    "duration" : 17757
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Expected 'Login' to equal 'Dashboard'.",
+  "statusTrace" : "Error: Failed expectation\n                    at UserContext.<anonymous> (F:\\protractor\\Hybrent3.2\\Hybrent3.2\\Testcases\\login\\login.js:34:32)\n                    at C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\jasminewd2\\index.js:112:25\n                    at new ManagedPromise (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:1077:7)\n                    at ControlFlow.promise (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2505:12)\n                    at schedulerExecute (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\jasminewd2\\index.js:95:18)\n                    at TaskQueue.execute_ (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n                    at TaskQueue.executeNext_ (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n                    at asyncRun (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2974:25)\n                    at C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:668:7",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Expected 'Login' to equal 'Dashboard'.",
+    "statusTrace" : "Error: Failed expectation\n                    at UserContext.<anonymous> (F:\\protractor\\Hybrent3.2\\Hybrent3.2\\Testcases\\login\\login.js:34:32)\n                    at C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\jasminewd2\\index.js:112:25\n                    at new ManagedPromise (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:1077:7)\n                    at ControlFlow.promise (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2505:12)\n                    at schedulerExecute (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\jasminewd2\\index.js:95:18)\n                    at TaskQueue.execute_ (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n                    at TaskQueue.executeNext_ (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n                    at asyncRun (C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2974:25)\n                    at C:\\Users\\sandy\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:668:7",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9b4b3bdb0224190",
+      "name" : "Screenshot",
+      "source" : "9b4b3bdb0224190.png",
+      "type" : "image/png",
+      "size" : 9604
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "testClass",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login: Try login with correct credentials."
+  }, {
+    "name" : "package",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "142f6f092fd7ee61.json",
+  "parameterValues" : [ ]
+}

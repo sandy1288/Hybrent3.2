@@ -26,17 +26,17 @@ describe('Account Receivable Code', function () {
     element(by.model('ARCodeData.description')).sendKeys(AR_desc);
     element(by.model('ARCodeData.code')).sendKeys(ARC + randomnumber);
     element(by.buttonText('Save')).click();
-    expect($('.toast-message').getText()).toEqual('Code created sucessfully.');
+    expect($('.toast-message').getText()).toEqual('Code created successfully.');
 
   });
 
   it('search newly created Account Receivable Code by given name and code', function () {
-    element(by.model('ARCodeData.description')).clear().sendKeys(AR_desc);
+    element(by.model('searchFilter')).clear().sendKeys(AR_desc);
     element(by.buttonText('Search')).click();
     expect(element(by.repeater('ARCodeData in arCodesData')).getText()).toContain(AR_desc);
     browser.sleep(2000);
     //search AR code by code number
-    element(by.model('ARCodeData.description')).clear().sendKeys(ARC + randomnumber);
+    element(by.model('searchFilter')).clear().sendKeys(ARC + randomnumber);
     element(by.buttonText('Search')).click();
     expect(element(by.repeater('ARCodeData in arCodesData')).getText()).toContain(AR_desc);
   });
@@ -45,7 +45,7 @@ describe('Account Receivable Code', function () {
     element(by.buttonText('Delete')).click();
     browser.sleep(1000);
     element(by.buttonText('Yes')).click();
-    expect($('.toast-message').getText()).toEqual('Code deleted successfully.');
+    expect($('.toast-message').getText()).toEqual("Code deleted successfully.");
 
   });
 

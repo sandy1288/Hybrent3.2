@@ -1,0 +1,39 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Hybrent Login Module",
+    "children" : [ {
+      "name" : "Login: Try login with correct credentials.",
+      "uid" : "54a249d1fae4a4b0",
+      "parentUid" : "ab126fce1caf34f3a3cc63bb6931542a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1571457789399,
+        "stop" : 1571457821152,
+        "duration" : 31753
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "ab126fce1caf34f3a3cc63bb6931542a"
+  }, {
+    "name" : "user default facility",
+    "children" : [ {
+      "name" : "user default facility is",
+      "uid" : "689ef344cfe59f3a",
+      "parentUid" : "86cee43fa013db682559454083f88c58",
+      "status" : "passed",
+      "time" : {
+        "start" : 1571457821170,
+        "stop" : 1571457822765,
+        "duration" : 1595
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "86cee43fa013db682559454083f88c58"
+  } ]
+}

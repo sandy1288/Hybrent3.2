@@ -10,13 +10,6 @@ describe('physician module', function () {
   var randNumber = browser.params.itemCatalog.randNumber;
   var fac_name = browser.params.user.fac_name;
 
-  // it('verify that physican and facilities filter appear on page', function () {
-  //   browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-  //   expect(element(by.model('searchForm.search')).isPresent()).toBeTruthy();
-  //   expect(element(by.xpath('//a[contains(text(),"All Facilities")]')).isPresent()).toBeTruthy();
-  //   expect(element.buttonText('Search')).isPresent().toBeTruthy();
-  // });
-
   it('Add a physician', function () {
 
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
@@ -36,10 +29,15 @@ describe('physician module', function () {
 
   });
 
+  it('verify that physican and facilities filter appear on page', function () {
+    browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
+    expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
+  });
+
   it('verify that searching with Physician name, NPI and Facility wise working properly', function () {
 
-    element(by.model(searchParams.search)).sendKeys(Physician_first_name + randNumber);
-    element(by.buttonText(Search)).click();
+    element(by.model('searchParams.search')).sendKeys(Physician_first_name + randNumber);
+    element(by.buttonText('Search')).click();
     console.log(Physician_first_name + randNumber);
     element.all(by.repeater('physician in physicians')).each(function (element1, index) {
       element1.element(by.binding('physician.NPI')).getText().then(function (text) {

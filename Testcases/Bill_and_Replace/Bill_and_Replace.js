@@ -1,4 +1,4 @@
-describe('Hybrent Scan IN Module', function () {
+describe('Hybrent Bill & Replace Module', function () {
   var EC = protractor.ExpectedConditions;
   var templateName = browser.params.Templates.templateName;
   var General_sku = browser.params.itemCatalog.General_sku;

@@ -8,7 +8,7 @@ describe('GL code moudle', function () {
   it('Open GL code module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-    element(by.linkText('GL Code')).click();
+    element(by.linkText('Custom GL Code')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
     expect(browser.getTitle()).toEqual('GLCodes');
   });

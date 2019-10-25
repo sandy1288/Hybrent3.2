@@ -16,7 +16,7 @@ describe('Prefcard module', function () {
   });
 
   it('verify that search filter and drop down options appear on pref card listing page', function () {
-    expect(element(by.model('searchForm.search')).isPresent()).toBeTruthy();
+    expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.physician_id')).isPresent()).toBeTruthy();
   });
 
@@ -66,7 +66,7 @@ describe('Prefcard module', function () {
     // browser.sleep(1000);
     //element(by.model('searchParams.search')).click();
     //element(by.xpath('//*[@id="ng-view"]/div/div/div[1]/div/div/button')).click();
-    expect($('.toast-message').getText()).toEqual("Preference card successfully created.");
+    expect($('.toast-message').getText()).toEqual("Preference Card Successfully created.");
     expect(browser.getTitle()).toEqual('Preference Cards');
   });
 

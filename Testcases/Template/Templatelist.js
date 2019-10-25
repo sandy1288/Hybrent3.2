@@ -11,11 +11,9 @@ describe('Hybrent Templates Module', function () {
     });
     expect(browser.getTitle()).toEqual('Manage Templates');
   });
-  it('List page should display templates filters and Add templates button', function () {
+  it('List page should display templates search filter', function () {
     expect(element(by.model('searchForm.searchFilter')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchForm.facility_id')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Add Template')).isPresent()).toBeTruthy();
+
   });
   it('Add Template', function () {
     element(by.buttonText('Add Template')).click();
@@ -30,9 +28,11 @@ describe('Hybrent Templates Module', function () {
     browser.sleep(1000);
     element(by.buttonText('Add')).click();
     element(by.buttonText('Save')).click();
+    browser.sleep(1000);
     element.all(by.repeater('item in vendor.items')).each(function (element1, index) {
       element1.element(by.binding('item.sku')).getText().then(function (text) {
-        expect(text).toEqual(General_sku);
+        browser.sleep(2000);
+        expect(text).toEqual(General_sku + randNumber);
       });
     });
     element(by.buttonText('Close')).click();
@@ -43,7 +43,8 @@ describe('Hybrent Templates Module', function () {
     element(by.buttonText('Search')).click();
     element.all(by.repeater('template in templates')).each(function (element1, index) {
       element1.element(by.binding('template.template_name')).getText().then(function (text) {
-        expect(text).toEqual(templateName + randNumber);
+        browser.sleep(2000);
+        expect(text).toContain(templateName + randNumber);
       });
     });
   });

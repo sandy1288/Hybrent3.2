@@ -24,7 +24,7 @@ describe('Picklist module', function () {
     expect(element(by.model('searchParams.date_range')).isPresent()).toBeTruthy();
   });
 
-  it('Search and open newly created case', function () {
+  it('Search newly created case', function () {
     element(by.model('searchParams.search')).clear().sendKeys(Patient_fname + " " + randNumber);
     browser.sleep(2000);
     element(by.model('searchParams.procedure_id')).$('[label="' + Procedure_name + randNumber + '"]').click();
@@ -32,8 +32,6 @@ describe('Picklist module', function () {
     element(by.model('searchParams.physician_id')).$('[label="' + Physician_first_name + " " + randNumber + '"]').click();
     browser.sleep(2000);
     element(by.model('searchParams.operating_room_id')).$('[label="' + OR_Name + randNumber + '"]').click();
-    browser.sleep(2000);
-    element(by.model('searchParams.date_range')).sendKeys('-- All Dates --');
     browser.sleep(2000);
     element(by.model('searchParams.date_range')).sendKeys('-- All Dates --');
     browser.sleep(1000);
@@ -45,9 +43,11 @@ describe('Picklist module', function () {
 
   });
 
+
+
   it('open and add normal notes in newly created case', function () {
 
-    element(by.partialLinkText('00000001')).click();
+    element(by.partialLinkText('00000000')).click();
     browser.sleep(2000);
     element(by.model('CaseDetail.gloves_size')).clear().sendKeys('glove' + randNumber);
     element(by.model('CaseDetail.surgeon_notes')).clear().sendKeys('surgeon' + randNumber);
@@ -59,7 +59,7 @@ describe('Picklist module', function () {
     browser.sleep(1000);
   });
 
-  it('increase item qty and move case to execute case', function () {
+  it('increase item qty ', function () {
     element.all(by.className('item-qty-editable-label')).first().click();
     element(by.model('$parent.$data')).clear().sendKeys('1.000');
     browser.sleep(2000);
@@ -67,16 +67,19 @@ describe('Picklist module', function () {
     browser.executeScript("arguments[0].scrollIntoView(0,0);", element(by.className('pagehead')).getWebElement()).then(function () {
       browser.sleep(2000);
       element(by.buttonText('Save')).click();
+      browser.sleep(3000);
     })
+  });
 
-    element(by.xpath('//span[contains(text(),"Auto Attach Stock")]')).click();
+  it('move case to execute case', function () {
+    browser.executeScript("arguments[0].scrollIntoView();", element(by.xpath('//span[contains(text(),"Auto Attach Stock")]')).getWebElement()).then(function () {
+      element(by.xpath('//span[contains(text(),"Auto Attach Stock")]')).click();
+    });
     expect($('.toast-message').getText()).toEqual('All Items stock attached successfully.');
-    browser.sleep(1000);
-
-    element(by.buttonText('Save')).click();
-    expect($('.toast-message').getText()).toEqual('Case updated successfully.');
     browser.sleep(3000);
-    element(by.buttonText('Move to Execute')).click();
+    element(by.buttonText('Save')).click();
+    browser.sleep(2000);
+    element(by.xpath('//button[contains(text(),"Move to Execute")]')).click();
     expect($('.toast-message').getText()).toEqual('Case moved to execute successfully.');
     browser.sleep(2000);
     expect(browser.getTitle()).toEqual('Pick list');

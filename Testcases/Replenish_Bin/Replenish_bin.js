@@ -1,4 +1,4 @@
-describe('Hybrent Scan IN Module', function () {
+describe('Hybrent ReplenishBin Module', function () {
   var EC = protractor.ExpectedConditions;
   var templateName = browser.params.Templates.templateName;
   var General_sku = browser.params.itemCatalog.General_sku;
@@ -9,7 +9,7 @@ describe('Hybrent Scan IN Module', function () {
   var randomnmbr = browser.params.Vendor_price_tier.randompricetier;
   var PO_Num = browser.params.itemCatalog.PO_Number;
 
-  it('Open Bill and Replace module', function () {
+  it('Open ReplenishBin module', function () {
     browser.executeScript("arguments[0].scrollIntoView();", element(by.css('a > span.menu-icon > i.fa-retweet')).getWebElement()).then(function () {
       element(by.xpath('//span[contains(text(),"Replenish Bin")]')).click();
     });
@@ -22,10 +22,11 @@ describe('Hybrent Scan IN Module', function () {
     expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
   });
 
-  it('Add item to ReplenishBin car by search filter', function () {
-    element(by.model('searchParams.search')).sendKeys(General_mfrNumber + randNumber);
+  it('Add item to ReplenishBin cart by search filter', function () {
+    element(by.model('searchParams.search')).sendKeys(General_sku + randNumber);
     var itemRow = element(by.repeater('suggestion in $ctrl.suggestions').row(0));
-    element(by.buttonText('Add')).click();
+    browser.sleep(1000);
+    itemRow.element(by.buttonText('Add')).click();
     browser.sleep(1000);
     element(by.xpath('//button[@class="button button-sm"]')).click();
     element(by.model('replenishBinParams.vendorParams[key].is_receive_only')).click();
@@ -37,7 +38,8 @@ describe('Hybrent Scan IN Module', function () {
     element(by.buttonText('Yes')).click();
     browser.sleep(1000);
     element(by.buttonText('Yes')).click();
-    expect($('.toast-message').getText()).toEqual('PO(' + 'RP' + randomnmbr + ') created successfully.');
+    expect($('.toast-message').getText()).toEqual("PO ' + 'RP' + randomnmbr + ' created successfully.");
+    browser.sleep(2000);
   });
 
 

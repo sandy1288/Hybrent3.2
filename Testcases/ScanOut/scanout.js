@@ -18,7 +18,7 @@ describe('Hybrent Scanout Module', function () {
     // browser.sleep(2000);
     // scanout.click();
     // browser.sleep(5000);
-    expect(browser.getTitle()).toEqual('Scan Out');
+    expect(browser.getTitle()).toEqual('Scan out');
 
   });
 
@@ -26,7 +26,7 @@ describe('Hybrent Scanout Module', function () {
   it('List page should display Scan out filters and refresh button', function () {
     expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
     expect(element(by.model('search.search')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText(' Search ')).isPresent()).toBeTruthy();
+
 
   });
 

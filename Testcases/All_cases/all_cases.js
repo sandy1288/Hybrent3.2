@@ -13,7 +13,7 @@ describe('All Cases module', function () {
       element(by.xpath('//span[contains(text(),"All Cases")]')).click();
     });
     browser.sleep(2000);
-    expect(browser.getTitle()).toEqual('All Cases');
+    expect(browser.getTitle()).toEqual('All cases');
   });
 
   it('Verify that all search and drop down filter appear on the All case page', function () {

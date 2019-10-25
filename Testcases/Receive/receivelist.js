@@ -13,14 +13,13 @@ describe('Hybrent Receive Module', function () {
 
   it('verify that all search filter appear on listing page', function () {
     expect(element(by.model('searchForm.search')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchForm.vendorFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.statusFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.typeFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.project')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.facilityId')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.departmentId')).isPresent()).toBeTruthy();
     expect(element(by.model('$ctrl.selectedValue.name')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+
 
   });
   it('verify that po search functionality is working fine', function () {

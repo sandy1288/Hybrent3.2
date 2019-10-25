@@ -1,5 +1,5 @@
 var user_facility = require('../Userfacility/User_defaultfacility.js');
-describe('Picklist module', function () {
+describe('Execute Case module', function () {
   var EC = protractor.ExpectedConditions;
   var fac_name = browser.params.user.fac_name;
   var Patient_fname = browser.params.Patients.Patient_fname;
@@ -45,7 +45,7 @@ describe('Picklist module', function () {
   });
 
   it('increase item hold qty and move case to complete case', function () {
-    element(by.partialLinkText('00000001')).click();
+    element(by.partialLinkText('00000000')).click();
     browser.sleep(2000);
     element.all(by.className('item-qty-editable-label')).click();
     element(by.model('$parent.$data')).clear().sendKeys('1.000');
@@ -63,7 +63,7 @@ describe('Picklist module', function () {
     }, 10000);
 
     browser.sleep(3000);
-    element(by.buttonText('Complete Case')).click();
+    element(by.xpath('//button[contains(text(),"Complete Case")]')).click();
     expect($('.toast-message').getText()).toEqual('Case completed successfully.');
     browser.sleep(2000);
     expect(browser.getTitle()).toEqual('Execute cases');

@@ -1,0 +1,32 @@
+{
+  "name": "Hybrent3.2",
+  "version": "1.0.0",
+  "main": "conf.js",
+  "dependencies": {
+    "jasmine": "^3.5.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine2-protractor-utils": "^1.3.0",
+    "protractor-html-reporter-2": "^1.0.4"
+  },
+  "devDependencies": {
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  },
+  "scripts": {
+    "pretest": "rm -rf allure-report",
+    "protractortest": "protractor conf.js",
+    "report": "allure generate allure-results --clean -o allure-report || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandy1288/Hybrent3.2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandy1288/Hybrent3.1/issues"
+  },
+  "homepage": "https://github.com/sandy1288/Hybrent3.2#readme",
+  "description": ""
+}

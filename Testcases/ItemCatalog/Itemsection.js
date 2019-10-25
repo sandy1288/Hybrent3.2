@@ -48,6 +48,56 @@ describe('Hybrent Item Catalog Module', function () {
     expect(element(by.model('searchParams.category_id')).isPresent()).toBeTruthy();
   });
 
+  it('verify that all the status option appear under the status dropdown', function () {
+    element(by.model('searchParams.is_active')).
+    all(by.tagName('option')).getText().then(function (status) {
+      console.log(status);
+      var myoption = status;
+      expect(myoption).toEqual(['All', 'Active', 'InActive', 'Freehand']);
+    });
+
+  });
+
+  it('verify that Both, Inventory Item, Non-inventoryitem option appear under the type dropdown', function () {
+    element(by.model('searchParams.type')).
+    all(by.tagName('option')).getText().then(function (status) {
+      console.log(status);
+      var myoption = status;
+      expect(myoption).toEqual(['Both', 'Inventory Item', 'Non-Inventory Item']);
+    });
+
+  });
+
+  it('verify all category option appear under the category dropdown', function () {
+    element(by.model('searchParams.category_id')).
+    all(by.tagName('option')).getText().then(function (status) {
+      console.log(status);
+      var myoption = status;
+      expect(myoption).toContain(['All Categories', 'Amenity', 'Crona1', 'hybrent technology', 'Service', 'Tester']);
+    });
+
+  });
+
+  it('verify all ordering_type option appear under the ordering_type dropdown', function () {
+    element(by.model('searchParams.ordering_type')).
+    all(by.tagName('option')).getText().then(function (status) {
+      console.log(status);
+      var myoption = status;
+      expect(myoption).toContain(['All', 'Amenity', 'General', 'Service', 'Free-Hand', 'Bill-Only', 'DME']);
+    });
+
+  });
+
+  it('verify all consumption_type option appear under the consumption_type dropdown', function () {
+    element(by.model('searchParams.consumption_type')).
+    all(by.tagName('option')).getText().then(function (status) {
+      console.log(status);
+      var myoption = status;
+      expect(myoption).toEqual(['All', 'Piece', 'Length', 'Weight', 'Liquid', 'Drops', 'Sprays']);
+    });
+
+  });
+
   it('Add Dme Item', function () {
     element(by.xpath('//span[@class="fa fa-caret-down"]')).click();
     element(by.xpath('//a[contains(text(),"Add Item")]')).click();
@@ -104,12 +154,13 @@ describe('Hybrent Item Catalog Module', function () {
       })
       expect(element(by.buttonText('Add to facility')).isPresent()).toBeTruthy();
       element(by.buttonText('Add to facility')).click();
-      element(by.name('purchase_price')).sendKeys('01.21');
+      element(by.name('purchase_price')).sendKeys('1.21');
+      element(by.name('billable_price')).sendKeys('0.20');
       element(by.buttonText('Save')).click();
       expect($('.toast-message').getText()).toEqual('Item added successfully.');
       expect(element(by.buttonText('Edit')).isPresent()).toBeTruthy();
       element(by.model('itemVendorFacility.purchase_price')).getAttribute('value').then(function (text) {
-        expect(text).toEqual('01.21');
+        expect(text).toEqual('1.21');
       });
       element(by.xpath('//i[@class="fa fa-2x fa-times"]')).click();
     });
@@ -121,6 +172,7 @@ describe('Hybrent Item Catalog Module', function () {
     element(by.xpath('//span[@class="fa fa-caret-down"]')).click();
     element(by.xpath('//a[contains(text(),"Add Item")]')).click();
     element(by.model('item.description')).sendKeys(General_item_Name + randNumber);
+    element(by.model('item.alias')).sendKeys(General_alias + randNumber);
     element(by.model('item.mfr_number')).sendKeys(General_mfrNumber + randNumber);
     browser.sleep(1000);
     element(by.css('button > i.fa-ellipsis-h')).click();
@@ -153,11 +205,12 @@ describe('Hybrent Item Catalog Module', function () {
   });
 
   it('Verify that "Map Facility for item Sku --- pop up appears on the screen.', function () {
+    browser.sleep(2000);
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
     element(by.linkText('Items Catalog')).click();
     expect(browser.getTitle()).toEqual('Items Catalog : List');
     browser.sleep(1000);
-    element(by.model('searchParams.search')).clear().sendKeys(General_mfrNumber + randNumber);
+    element(by.model('searchParams.search')).clear().sendKeys(General_sku + randNumber);
     element(by.buttonText('Search')).click();
     element.all(by.repeater('item in items')).each(function (element1, index) {
       element1.element(by.binding('item.mfr_number')).getText().then(function (text) {
@@ -177,6 +230,7 @@ describe('Hybrent Item Catalog Module', function () {
       expect(element(by.buttonText('Add to facility')).isPresent()).toBeTruthy();
       element(by.buttonText('Add to facility')).click();
       element(by.name('purchase_price')).sendKeys('12.52');
+      element(by.name('billable_price')).sendKeys('0.20');
       element(by.buttonText('Save')).click();
       expect($('.toast-message').getText()).toEqual('Item added successfully.');
       expect(element(by.buttonText('Edit')).isPresent()).toBeTruthy();
@@ -245,6 +299,7 @@ describe('Hybrent Item Catalog Module', function () {
       expect(element(by.buttonText('Add to facility')).isPresent()).toBeTruthy();
       element(by.buttonText('Add to facility')).click();
       element(by.name('purchase_price')).sendKeys('12.52');
+      element(by.name('billable_price')).sendKeys('0.20');
       element(by.buttonText('Save')).click();
       expect($('.toast-message').getText()).toEqual('Item added successfully.');
       expect(element(by.buttonText('Edit')).isPresent()).toBeTruthy();
@@ -262,7 +317,7 @@ describe('Hybrent Item Catalog Module', function () {
     element(by.model('amenity.description')).sendKeys('testAM' + randNumber);
     element(by.model('amenity.alias')).sendKeys('amenityalias' + randNumber);
     element(by.model('amenity.service_duration')).$('[label="' + 'For One Time' + '"]').click();
-    element(by.model('amenity.ar_code_id')).sendKeys(ARC + randomnumber);
+    //element(by.model('amenity.ar_code_id')).sendKeys(ARC + randomnumber);
     browser.sleep(1000);
     element(by.buttonText('Save')).click();
     expect($('.toast-message').getText()).toEqual('Amenity saved successfully.');

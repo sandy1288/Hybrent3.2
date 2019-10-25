@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1571422092357' stop='1571422111321'>
+    <name>Hybrent Login Module</name>
+    <title>Hybrent Login Module</title>
+    <test-cases>
+        <test-case start='1571422092358' status='failed' stop='1571422111320'>
+            <name>Login: Try login with correct credentials.</name>
+            <title>Login: Try login with correct credentials.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='0a2a524a-34c9-4ac8-83ec-41693b9b8950-attachment.png' type='image/png' size='10348'/>
+            </attachments>
+            <failure>
+                <message>Expected 'Login' to equal 'Dashboard'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (F:\protractor\Hybrent3.2\Hybrent3.2\Testcases\login\login.js:34:32)
+                    at C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+                    at new ManagedPromise (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+                    at ControlFlow.promise (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+                    at schedulerExecute (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+                    at TaskQueue.execute_ (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+                    at TaskQueue.executeNext_ (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+                    at asyncRun (C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2974:25)
+                    at C:\Users\sandy\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

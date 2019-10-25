@@ -16,7 +16,7 @@ describe('Approve unapproved items', function () {
     expect(browser.getTitle()).toEqual('Approve Items');
 
   });
-  it('select user default facility', function () {
+  xit('select user default facility', function () {
     element(by.xpath('//*[@id="ng-view"]/div/div[1]/hyb-facility-select/a')).click();
     browser.sleep(2000);
     element(by.model('search.searchKeyword')).sendKeys(browser.params.user.fac_name);
@@ -31,7 +31,7 @@ describe('Approve unapproved items', function () {
     expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.vendorId')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.is_approved')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+
   });
 
   it('verify that user is able to search item with item name, alias, sku and vendor name', function () {

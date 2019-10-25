@@ -1,0 +1,21 @@
+[ {
+  "uid" : "689ef344cfe59f3a",
+  "name" : "user default facility is",
+  "time" : {
+    "start" : 1571457821170,
+    "stop" : 1571457822765,
+    "duration" : 1595
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "54a249d1fae4a4b0",
+  "name" : "Login: Try login with correct credentials.",
+  "time" : {
+    "start" : 1571457789399,
+    "stop" : 1571457821152,
+    "duration" : 31753
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

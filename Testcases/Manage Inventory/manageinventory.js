@@ -17,16 +17,14 @@ describe('Hybrent Manage Inventory Module', function () {
   });
 
   it('List page should display list of items and manage inventory filters', function () {
-    expect(element.all(by.repeater('item in items')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchParams.vendor_id')).isPresent()).toBeTruthy();
     expect(element(by.model('searchParams.show_vendor_stock')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Refresh')).isPresent()).toBeTruthy();
-    expect(element(by.xpath('//button[@class="btn btn-default dropdown-toggle no-float"]')).isPresent()).toBeTruthy();
-    expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+    expect(element(by.model('searchParams.vendor_id')).isPresent()).toBeTruthy();
+
+
   });
 
-  /*it('Search items by Name', function () {
+  it('Search items by Name', function () {
     element(by.model('searchParams.search')).clear().sendKeys(General_item_Name + randNumber);
     element(by.buttonText('Search')).click();
     element.all(by.repeater('item in items')).each(function (element1, index) {
@@ -39,7 +37,11 @@ describe('Hybrent Manage Inventory Module', function () {
   it('Search items by alise', function () {
     element(by.model('searchParams.search')).clear().sendKeys(General_alias + randNumber);
     element(by.buttonText('Search')).click();
-    expect(element(by.model('item.alias')).getAttribute('value')).toEqual(General_alias + randNumber);
+    element.all(by.repeater('item in items')).each(function (element1, index) {
+      element1.element(by.binding('item.description')).getText().then(function (text) {
+        expect(text).toEqual(General_item_Name + randNumber);
+      });
+    });
 
   });
 
@@ -48,6 +50,7 @@ describe('Hybrent Manage Inventory Module', function () {
     element(by.buttonText('Search')).click();
     element.all(by.repeater('vendor in ::item.itemVendors')).each(function (element1, index) {
       element1.element(by.binding('vendor.sku')).getText().then(function (text) {
+        browser.sleep(2000);
         expect(text).toEqual(General_sku + randNumber);
       });
     });
@@ -58,6 +61,7 @@ describe('Hybrent Manage Inventory Module', function () {
     element(by.buttonText('Search')).click();
     element.all(by.repeater('item in items')).each(function (element1, index) {
       element1.element(by.binding('vendor.sku')).getText().then(function (text) {
+        browser.sleep(2000);
         expect(text).toEqual(General_sku + randNumber);
       });
     });
@@ -72,27 +76,26 @@ describe('Hybrent Manage Inventory Module', function () {
         expect(text).toEqual(vendor);
       });
     });
-  });*/
+  });
 
   it('Transfer Item', function () {
-    element(by.model('searchParams.search')).clear().sendKeys('GS1567603088683');
+    element(by.model('searchParams.vendor_id')).$('[label="' + 'All Vendors' + '"]').click();
+    element(by.model('searchParams.search')).clear().sendKeys(General_sku + randNumber);
     element(by.buttonText('Search')).click();
     let itemtray = element(by.repeater('item in items'));
     browser.wait(EC.elementToBeClickable(itemtray.element(by.css('.dropdown-toggle'))), 5000);
     itemtray.element(by.css('.dropdown-toggle')).click();
     element(by.linkText('Transfer')).click();
     browser.sleep(1000);
-    element(by.css('.sa-button-container')).element(by.buttonText('No')).click();
+    element(by.css('.sa-button-container')).element(by.buttonText('Yes')).click();
     browser.sleep(2000);
+    element(by.model('item.transferQuantity')).sendKeys('1');
     // browser.wait(EC.visibilityOf(element(by.xpath('//span[contains(text(),"Select Inventory")]'))), 5000);
-    element(by.xpath('//span[contains(text(),"Select Inventory")]')).click();
-    element(by.buttonText('Select')).click();
-    browser.sleep(2000);
-    element(by.model('transferInventory.transferQuantity')).sendKeys('1');
-    element(by.buttonText('Transfer')).click();
+    browser.sleep(1000);
+    element(by.buttonText('Create')).click();
     browser.sleep(2000);
     element(by.css('.sa-button-container')).element(by.buttonText('Yes')).click();
-    expect($('.toast-message').getText()).toEqual('Inventory transferred successfully.');
+    expect($('.toast-message').getText()).toContain('Stock transfer request created');
 
 
   });

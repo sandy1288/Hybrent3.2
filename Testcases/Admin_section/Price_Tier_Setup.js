@@ -10,9 +10,6 @@ describe('Price Tier Setup module', function () {
   var randompricetier = browser.params.Vendor_price_tier.randompricetier;
 
 
-
-
-
   it('Open Price Tier Setup module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
     element(by.linkText('Price Tier Setup')).click();
@@ -25,6 +22,7 @@ describe('Price Tier Setup module', function () {
   });
 
   it('Verify that user is able to add new price tier', function () {
+    browser.sleep(2000);
     element(by.buttonText('Add')).click();
     browser.sleep(2000);
     element(by.model('tierData.name')).clear().sendKeys(price_tier_name + randompricetier);

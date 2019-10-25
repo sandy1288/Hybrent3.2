@@ -4,6 +4,7 @@ describe('Patient module', function () {
   var fac_name = browser.params.user.fac_name;
   var Patient_defaultfacility = browser.params.Patients.Patientfac_xpath;
   var Patient_fname = browser.params.Patients.Patient_fname;
+  var Status = browser.params.Patients.Status;
   var randNumber = browser.params.itemCatalog.randNumber;
 
   it('Navigate to patient module', function () {
@@ -21,18 +22,17 @@ describe('Patient module', function () {
   });
 
   it('Verify that search patient By filter appear on patient detail page', function () {
-    expect(element(by.model('searchForm.search')).isPresent()).toBeTruthy();
+    expect(element(by.model('searchParams.search')).isPresent()).toBeTruthy();
+    expect(element(by.model('$select.search')).isPresent()).toBeTruthy();
+    expect(element(by.model('searchParams.building_id')).isPresent()).toBeTruthy();
+    expect(element(by.model('$select.search')).isPresent()).toBeTruthy();
   });
 
   it('verify that user is able to add patient by clicking on add patient button', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-    element(by.buttonText('Add Patient')).click();
+    element(by.xpath('//span[@class="patient-add-icon"]')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
     element(by.model('patient.first_name')).sendKeys(Patient_fname);
-    element(by.model('patient.last_name')).sendKeys(randNumber);
-    element(by.model('patient.mrn_number')).sendKeys(randNumber);
-    element(by.model('patient.account_number')).sendKeys(randNumber);
-    element(by.id('dob')).clear().sendKeys("01/01/2018");
     element(by.xpath('//a[contains(text(),"--Select facility--")]')).click();
     browser.sleep(1000);
     element(by.model('search.searchKeyword')).sendKeys(browser.params.user.fac_name);
@@ -41,6 +41,13 @@ describe('Patient module', function () {
     browser.sleep(1000);
     element(by.buttonText('Select')).click();
     browser.sleep(1000);
+    element(by.model('patient.last_name')).sendKeys(randNumber);
+    element(by.model('patient.mrn_number')).sendKeys(randNumber);
+    element(by.model('patient.account_number')).sendKeys(randNumber);
+    element(by.model('patient.resident_id')).sendKeys(randNumber);
+    element(by.id('dob')).clear().sendKeys("01/01/2018");
+    browser.sleep(2000);
+    element(by.xpath('//select[@id="status"]//option[3]')).click();
     element(by.buttonText('Save')).click();
     expect($('.toast-message').getText()).toEqual('Patient successfully created.');
 
@@ -48,7 +55,7 @@ describe('Patient module', function () {
 
   });
 
-  it('Patient: Update Patient.', function () {
+  xit('Patient: Update Patient.', function () {
     // element(by.css('div.pagehead > hyb-select > a')).click();
     // element(by.model('search.searchKeyword')).sendKeys(browser.params.user.fac_name);
     // element(by.buttonText('Select')).click();

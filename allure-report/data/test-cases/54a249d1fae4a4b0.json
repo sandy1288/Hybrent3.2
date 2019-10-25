@@ -1,0 +1,134 @@
+{
+  "uid" : "54a249d1fae4a4b0",
+  "name" : "Login: Try login with correct credentials.",
+  "fullName" : "Hybrent Login Module.Login: Try login with correct credentials.",
+  "historyId" : "c58bf4cbd04ef6aacdf482c6dd3626d8",
+  "time" : {
+    "start" : 1571457789399,
+    "stop" : 1571457821152,
+    "duration" : 31753
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "b35aee68ed05afe0",
+      "name" : "Screenshot",
+      "source" : "b35aee68ed05afe0.png",
+      "type" : "image/png",
+      "size" : 128956
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "testClass",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login: Try login with correct credentials."
+  }, {
+    "name" : "package",
+    "value" : "Hybrent Login Module"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "9ab5fa0bc3bfe665",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571423522780,
+        "stop" : 1571423553301,
+        "duration" : 30521
+      }
+    }, {
+      "uid" : "58f1b70139edf62",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571423275168,
+        "stop" : 1571423295613,
+        "duration" : 20445
+      }
+    }, {
+      "uid" : "5a8306eacca24a13",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571423086154,
+        "stop" : 1571423106903,
+        "duration" : 20749
+      }
+    }, {
+      "uid" : "142f6f092fd7ee61",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571422911529,
+        "stop" : 1571422929286,
+        "duration" : 17757
+      }
+    }, {
+      "uid" : "655bebdb1baf5d6d",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571422354161,
+        "stop" : 1571422378898,
+        "duration" : 24737
+      }
+    }, {
+      "uid" : "555c768af076924",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571422092358,
+        "stop" : 1571422111320,
+        "duration" : 18962
+      }
+    }, {
+      "uid" : "bbe27e14ea0ac24b",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571420081886,
+        "stop" : 1571420097016,
+        "duration" : 15130
+      }
+    }, {
+      "uid" : "7726e7fcd57d68ec",
+      "status" : "failed",
+      "statusDetails" : "Expected 'Login' to equal 'Dashboard'.",
+      "time" : {
+        "start" : 1571419952596,
+        "stop" : 1571419965146,
+        "duration" : 12550
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "54a249d1fae4a4b0.json",
+  "parameterValues" : [ ]
+}
