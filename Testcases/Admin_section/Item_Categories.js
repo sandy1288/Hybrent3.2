@@ -10,6 +10,7 @@ describe('Item Categories', function () {
 
   it('Open Item Categories module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
+    browser.sleep(2000);
     element(by.linkText('Item Categories')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 10000);
     expect(browser.getTitle()).toEqual('Categories');
@@ -33,7 +34,7 @@ describe('Item Categories', function () {
     element(by.buttonText('Search')).click();
     browser.sleep(2000);
     element(by.repeater('category in categories')).getText().then(function (text) {
-      expect(text).toContain('cat' + randNumber);
+      expect(text).toContain('Cat' + randNumber);
     })
   });
 

@@ -66,9 +66,10 @@ describe('Planner module', function () {
     browser.sleep(2000);
     element(by.buttonText('Schedule Case')).click();
     browser.sleep(2000);
-    element(by.cssContainingText('.fc-title', Physician_first_name + randNumber)).click();
-    // element.all(by.css('')).last().click();
-    expect(browser.getTitle()).toEqual('Case Detail');
+    expect($('.toast-message')).toContain('Case #  successfully created for patient "john".');
+    // element(by.cssContainingText('.fc-title', Physician_first_name + randNumber)).click();
+    // // element.all(by.css('')).last().click();
+    // expect(browser.getTitle()).toEqual('Case Detail');
     browser.sleep(7000);
   });
 

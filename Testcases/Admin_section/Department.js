@@ -7,6 +7,7 @@ describe('Department', function () {
 
   it('Open Department module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
+    browser.sleep(2000);
     element(by.linkText('Departments')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
     expect(browser.getTitle()).toEqual('Department');
@@ -19,6 +20,7 @@ describe('Department', function () {
   });
 
   it('add new department', function () {
+    browser.sleep(2000);
     element(by.buttonText('Add')).click();
     element(by.xpath('//a[contains(text(),"--Select facility--")]')).click();
     browser.wait(EC.elementToBeClickable(element(by.model('search.searchKeyword'))), 5000);

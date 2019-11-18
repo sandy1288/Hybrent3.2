@@ -10,6 +10,7 @@ describe('Contract Management', function () {
 
   it('Open Contract Management module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
+    browser.sleep(2000);
     element(by.linkText('Contract Management')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 10000);
     expect(browser.getTitle()).toEqual('Contract Management');

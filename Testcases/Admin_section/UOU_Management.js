@@ -25,7 +25,7 @@ describe('UOU Management', function () {
     all(by.tagName('option')).getText().then(function (status) {
       console.log(status);
       var myoption = status;
-      expect(myoption).toContain(['All', 'Piece', 'Length', 'Weight', 'Liquid', 'Drops', 'Sprays']);
+      expect(myoption).toEqual(['All', 'Piece', 'Length', 'Weight', 'Liquid', 'Drops', 'Sprays']);
     });
 
   });

@@ -21,8 +21,9 @@ describe('Account Receivable Code', function () {
   });
 
   it('add new Account Receivable Code', function () {
+    browser.sleep(2000);
     element(by.buttonText('Add')).click();
-    browser.sleep(3000);
+    browser.sleep(2000);
     element(by.model('ARCodeData.description')).sendKeys(AR_desc);
     element(by.model('ARCodeData.code')).sendKeys(ARC + randomnumber);
     element(by.buttonText('Save')).click();

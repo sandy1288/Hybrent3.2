@@ -45,21 +45,21 @@ describe('Hybrent Manage Inventory Module', function () {
 
   });
 
-  it('Search items by sku', function () {
-    element(by.model('searchParams.search')).clear().sendKeys(General_sku + randNumber);
-    element(by.buttonText('Search')).click();
-    element.all(by.repeater('vendor in ::item.itemVendors')).each(function (element1, index) {
-      element1.element(by.binding('vendor.sku')).getText().then(function (text) {
-        browser.sleep(2000);
-        expect(text).toEqual(General_sku + randNumber);
-      });
-    });
-  });
-
   it('Search items by mfr number', function () {
     element(by.model('searchParams.search')).clear().sendKeys(General_mfrNumber + randNumber);
     element(by.buttonText('Search')).click();
     element.all(by.repeater('item in items')).each(function (element1, index) {
+      element1.element(by.binding('item.description')).getText().then(function (text) {
+        browser.sleep(2000);
+        expect(text).toEqual(General_item_Name + randNumber);
+      });
+    });
+  });
+
+  it('Search items by sku', function () {
+    element(by.model('searchParams.search')).clear().sendKeys(General_sku + randNumber);
+    element(by.buttonText('Search')).click();
+    element.all(by.repeater('vendor in ::item.itemVendors')).each(function (element1, index) {
       element1.element(by.binding('vendor.sku')).getText().then(function (text) {
         browser.sleep(2000);
         expect(text).toEqual(General_sku + randNumber);

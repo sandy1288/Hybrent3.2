@@ -55,7 +55,8 @@ exports.itemCatalog = {
 }
 
 exports.Templates = {
-  templateName: "template"
+  templateName: "template",
+  scanout_tempate_name: "scanouttemp"
 }
 exports.Physician = {
   firstname: "robert",

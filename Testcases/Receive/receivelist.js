@@ -16,7 +16,7 @@ describe('Hybrent Receive Module', function () {
     expect(element(by.model('searchForm.statusFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.typeFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.project')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchForm.facilityId')).isPresent()).toBeTruthy();
+    // expect(element(by.model('searchForm.facilityId')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.departmentId')).isPresent()).toBeTruthy();
     expect(element(by.model('$ctrl.selectedValue.name')).isPresent()).toBeTruthy();
 

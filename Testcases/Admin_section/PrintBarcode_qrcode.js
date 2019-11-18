@@ -51,7 +51,8 @@ describe('Print Barcodes/QRCodes', function () {
   });
 
   it('verify that all option to print item are availbale under print code button', function () {
-    element(by.xpath('//button[@class="btn btn-default no-margin"]')).click();
+    browser.sleep(2000);
+    element(by.className('btn btn-default no-margin')).click();
     browser.sleep(2000);
     expect(element(by.model('printType.printType')).isPresent()).toBeTruthy();
     expect(element(by.model('printType.barCodeType')).isPresent()).toBeTruthy();

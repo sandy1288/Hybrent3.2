@@ -45,7 +45,7 @@ describe('Execute Case module', function () {
   });
 
   it('increase item hold qty and move case to complete case', function () {
-    element(by.partialLinkText('00000000')).click();
+    element(by.partialLinkText('00000001')).click();
     browser.sleep(2000);
     element.all(by.className('item-qty-editable-label')).click();
     element(by.model('$parent.$data')).clear().sendKeys('1.000');

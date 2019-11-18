@@ -92,8 +92,10 @@ describe('Hybrent Scanout Module', function () {
 
   it("Scan Out items - Attach stock info", function () {
     element(by.linkText('Attach Stock Info')).click();
-    element(by.className('btn btn-primary pull-left')).click();
+    browser.sleep(1000);
+    element(by.buttonText('Attach')).click();
     expect($('.toast-message').getText()).toEqual('Item attached successfully.');
+    browser.sleep(2000);
   });
 
   it("Scan Out items - Remove attached stock info", function () {
@@ -115,7 +117,7 @@ describe('Hybrent Scanout Module', function () {
     browser.sleep(1000);
     element(by.buttonText('Yes')).click();
     element(by.buttonText('Complete')).click();
-    expect($('.toast-message').getText()).toEqual('Scan In completed successfully.');
+    expect($('.toast-message').getText()).toEqual('Scan Out completed successfully.');
 
   });
 });

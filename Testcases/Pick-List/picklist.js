@@ -47,7 +47,7 @@ describe('Picklist module', function () {
 
   it('open and add normal notes in newly created case', function () {
 
-    element(by.partialLinkText('00000000')).click();
+    element(by.partialLinkText('00000001')).click();
     browser.sleep(2000);
     element(by.model('CaseDetail.gloves_size')).clear().sendKeys('glove' + randNumber);
     element(by.model('CaseDetail.surgeon_notes')).clear().sendKeys('surgeon' + randNumber);

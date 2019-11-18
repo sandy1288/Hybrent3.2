@@ -51,10 +51,9 @@ describe('Hybrent Receive order', function () {
           element(by.buttonText('Yes')).click();
           browser.wait(EC.elementToBeClickable(element(by.buttonText('No'))), 5000);
           element(by.buttonText('No')).click();
-          browser.sleep(2000);
           expect($('.toast-message').getText()).toEqual('Order completed successfully.');
-          browser.sleep(2000);
         }
+        browser.sleep(2000);
         element(by.buttonText('Search')).click();
         expect(element(by.cssContainingText('.table-content-valign-center tr td', 'No Order Found')).isPresent()).toBeTruthy();
 

@@ -11,6 +11,7 @@ describe('Hybrent Login Module', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 10000);
     //loginLink.click();
     element(by.buttonText('Login')).click();
+    browser.sleep(1000);
     expect(errorElem.getText()).toEqual('Invalid user name or password.');
   });
 

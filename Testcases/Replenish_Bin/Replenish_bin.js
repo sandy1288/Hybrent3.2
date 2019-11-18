@@ -40,6 +40,7 @@ describe('Hybrent ReplenishBin Module', function () {
     element(by.buttonText('Yes')).click();
     expect($('.toast-message').getText()).toEqual("PO ' + 'RP' + randomnmbr + ' created successfully.");
     browser.sleep(2000);
+    expect(browser.getTitle()).toEqual('My Orders');
   });
 
 

@@ -8,7 +8,8 @@ describe('GL code moudle', function () {
   it('Open GL code module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-    element(by.linkText('Custom GL Code')).click();
+    browser.sleep(2000);
+    element(by.linkText('GL Code')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
     expect(browser.getTitle()).toEqual('GLCodes');
   });
@@ -16,6 +17,7 @@ describe('GL code moudle', function () {
   it('verify that search filter appear on the GL code page', function () {
     expect(element(by.model('searchFilter')).isPresent()).toBeTruthy();
     expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+    browser.sleep(2000);
   });
 
   it('Add new Gl Code', function () {
@@ -31,6 +33,16 @@ describe('GL code moudle', function () {
     element(by.buttonText('Search')).click();
     browser.sleep(1000);
     expect(element(by.repeater('GLCodeData in GLCodeDatas')).getText()).toContain(GLDescription + randNumber);
+  });
+
+  it('delete GL code', function () {
+    element(by.model('searchFilter')).clear().sendKeys(GLDescription + randNumber);
+    element(by.buttonText('Search')).click();
+    browser.sleep(1000);
+    element(by.buttonText('Delete')).click();
+    browser.sleep(2000);
+    element(by.css('.sa-button-container')).element(by.buttonText('Yes')).click();
+    expect($('.toast-message').getText()).toEqual('GLCode deleted successfully.');
   });
 
 

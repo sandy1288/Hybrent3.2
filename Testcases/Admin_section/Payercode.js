@@ -18,6 +18,7 @@ describe('Payor Code', function () {
     expect(element(by.model('searchFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchActive')).isPresent()).toBeTruthy();
     expect(element(by.buttonText('Search')).isPresent()).toBeTruthy();
+    browser.sleep(2000);
   });
 
   it('add new Payor Code', function () {
@@ -51,7 +52,7 @@ describe('Payor Code', function () {
   xit('delete newly created Payor Code', function () {
     element(by.buttonText('Delete')).click();
     browser.sleep(1000);
-    element(by.buttonText('Yes')).click();
+    element(by.css('.sa-button-container')).element(by.buttonText('Yes')).click();
     expect($('.toast-message').getText()).toEqual('Code deleted successfully.');
 
   });

@@ -47,7 +47,7 @@ describe('Patient module', function () {
     element(by.model('patient.resident_id')).sendKeys(randNumber);
     element(by.id('dob')).clear().sendKeys("01/01/2018");
     browser.sleep(2000);
-    element(by.xpath('//select[@id="status"]//option[3]')).click();
+    // element(by.xpath('//select[@id="status"]//option[3]')).click();
     element(by.buttonText('Save')).click();
     expect($('.toast-message').getText()).toEqual('Patient successfully created.');
 

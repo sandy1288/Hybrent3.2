@@ -73,7 +73,7 @@ describe('Hybrent Item Catalog Module', function () {
     all(by.tagName('option')).getText().then(function (status) {
       console.log(status);
       var myoption = status;
-      expect(myoption).toContain(['All Categories', 'Amenity', 'Crona1', 'hybrent technology', 'Service', 'Tester']);
+      expect(myoption).toEqual(jasmine.arrayContaining(['All Categories', 'Amenity', 'Crona11', 'hybrent technology', 'Service', 'Tester']))
     });
 
   });
@@ -83,7 +83,7 @@ describe('Hybrent Item Catalog Module', function () {
     all(by.tagName('option')).getText().then(function (status) {
       console.log(status);
       var myoption = status;
-      expect(myoption).toContain(['All', 'Amenity', 'General', 'Service', 'Free-Hand', 'Bill-Only', 'DME']);
+      expect(myoption).toEqual(['All', 'Amenity', 'General', 'Service', 'Free-Hand', 'Bill-Only', 'DME', 'KIT']);
     });
 
   });
@@ -321,6 +321,9 @@ describe('Hybrent Item Catalog Module', function () {
     browser.sleep(1000);
     element(by.buttonText('Save')).click();
     expect($('.toast-message').getText()).toEqual('Amenity saved successfully.');
+    browser.wait(EC.elementToBeClickable(element(by.buttonText('Yes'))), 5000);
+    browser.sleep(1000);
+    element(by.css('.sa-button-container')).element(by.buttonText('No')).click();
   });
 
 

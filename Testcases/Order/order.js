@@ -13,20 +13,26 @@ describe('Hybrent Order Module', function () {
     expect(element(by.model('searchForm.statusFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.typeFilter')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.project')).isPresent()).toBeTruthy();
-    expect(element(by.model('searchForm.facilityId')).isPresent()).toBeTruthy();
     expect(element(by.model('searchForm.departmentId')).isPresent()).toBeTruthy();
     expect(element(by.model('$ctrl.selectedValue.name')).isPresent()).toBeTruthy();
-
   });
 
   it('Order list page search with PO# Found', function () {
     element(by.model('searchForm.statusFilter')).click();
     element(by.model('searchForm.search')).sendKeys(PO_Num + randNumber);
     element(by.repeater('status in $select.items')).click();
-
     element(by.buttonText('Search')).click();
     browser.sleep(5000);
     expect(element(by.linkText(PO_Num + randNumber)).isPresent()).toBeTruthy();
+
+  });
+
+  it('open order detail page', function () {
+    element(by.linkText(PO_Num + randNumber)).click();
+    expect(browser.getTitle()).toEqual('Purchase Order');
+    browser.sleep(2000);
+    element(by.linkText('Orders')).click();
+    expect(browser.getTitle()).toEqual('My Orders');
   });
 
   it('verify that all option appears in Order drop down', function () {
@@ -35,16 +41,17 @@ describe('Hybrent Order Module', function () {
     order.element(by.css('.dropdown-toggle')).click();
     // browser.actions().mouseMove(order.element(by.css('li.po-print'))).perform();
     // browser.wait(EC.elementToBeClickable(order.element(by.css('li.po-print'))), 5000);
-    expect(element(by.css('li.po-print')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Download PO')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Print Items')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Invoices')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('PO Log')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Notes')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Documents')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Add Items to Cart')).isPresent()).toBeTruthy();
-    expect(element(by.linkText('Delete PO')).isPresent()).toBeTruthy();
+    expect(element(by.css('li.po-print')).isPresent()).toBe(true);
+    expect(element(by.linkText('Download PO')).isPresent()).toBe(true);
+    expect(element(by.linkText('Print Items')).isPresent()).toBe(true);
+    expect(element(by.linkText('Invoices')).isPresent()).toBe(true);
+    expect(element(by.linkText('PO Log')).isPresent()).toBe(true);
+    expect(element(by.linkText('Notes')).isPresent()).toBe(true);
+    expect(element(by.linkText('Documents')).isPresent()).toBe(true);
+    expect(element(by.linkText('Add Items to Cart')).isPresent()).toBe(true);
+    expect(element(by.linkText('Delete PO')).isPresent()).toBe(true);
   });
+
 
   it('add invoice for newly created order', function () {
     element(by.buttonText('Search')).click();

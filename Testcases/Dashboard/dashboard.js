@@ -1,3 +1,4 @@
+var JasmineExpect = require('jasmine-expect');
 var dashbrd = require('./dash.js');
 describe('Dashboard test cases', function () {
 
@@ -116,6 +117,7 @@ describe('Dashboard test cases', function () {
     })
 
   });
+
   it('Verify that relevant data appears under Monthly Purchase Order Value, Number of Backorders and Vendor Performance sections', function () {
     element(by.linkText('Dashboard')).click();
 
@@ -139,11 +141,17 @@ describe('Dashboard test cases', function () {
           console.log('Number of Partial Receives on dashboard are', count1);
           element(by.xpath("//span[contains(text(),'Number of Partial Receives')]")).click();
           browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 20000);
-          element(by.xpath("//div[@id='reqListing_info']")).getText().then(function (partialorders) {
-            console.log('partial order on order page are', partialorders);
-            browser.sleep(2000);
-            expect(count1).toContain(partialorders);
+          var partialordercount = element.all(by.repeater('order in ordersData.purchaseOrders'));
+          partialordercount.count().then(function (test) {
+            console.log('partial order on page are', test);
+            expect(count1).toBeString(test);
           })
+          // expect(partialordercount.count()).toBe('+count1+');
+          // element(by.xpath("//div[@id='reqListing_info']")).getText().then(function (partialorders) {
+          //   console.log('partial order on order page are', partialorders);
+          //   browser.sleep(2000);
+          //   expect(count1).toContain(partialorders);
+          // })
 
         })
       }

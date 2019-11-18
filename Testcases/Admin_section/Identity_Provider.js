@@ -10,6 +10,7 @@ describe('Identity Provider moudle', function () {
   it('Open Identity Provider module', function () {
     element(by.cssContainingText('a.hybrent-blue', 'Admin')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
+    browser.sleep(2000);
     element(by.linkText('Identity Provider')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
     expect(browser.getTitle()).toEqual('Identity Provider');
@@ -60,7 +61,7 @@ describe('Identity Provider moudle', function () {
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
     element(by.linkText('Identity Provider')).click();
     browser.wait(EC.invisibilityOf($('.pg-loading-center-middle')), 5000);
-    element(by.xpath('//button[@class="btn btn-default dropdown-toggle no-margin"]')).click();
+    element(by.className('btn btn-default dropdown-toggle no-margin')).click();
     browser.sleep(2000);
     element(by.linkText('Close')).click();
     browser.sleep(2000);
